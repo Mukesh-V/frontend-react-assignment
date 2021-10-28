@@ -52,6 +52,6 @@
 
 .item {
   width: auto;
-  height: 70vh;
-  overflow-y: auto;
+  justify-content: center;
+  align-items: center;
 }
