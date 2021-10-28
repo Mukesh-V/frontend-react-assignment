@@ -1,17 +1,13 @@
 .container {
   min-height: 100vh;
   padding: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
 .main {
-  padding: 5rem 0;
-  flex: 1;
-  display: flex;
+  padding: 1rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -31,7 +27,7 @@
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 2rem;
 }
 
 .title,
@@ -46,7 +42,7 @@
 
 .gridContainer {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto;
 }
 
 .gridContainer > div {
@@ -56,4 +52,6 @@
 
 .item {
   width: auto;
+  height: 70vh;
+  overflow-y: auto;
 }
