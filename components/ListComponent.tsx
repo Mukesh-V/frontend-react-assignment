@@ -16,7 +16,7 @@ import {
 import DeleteForeverRoundedIcon from '@mui/icons-material/DeleteForeverRounded';
 import { withStyles } from "@mui/styles";
 
-import CoordinateContext, { Coordinate } from './CoordinateContext';
+import MarkersContext, { Coordinate } from './MarkersContext';
 
 type Props = {
   className?: string;
@@ -24,7 +24,7 @@ type Props = {
 };
 
 const ListComponent = (props: Props): JSX.Element => {
-  var { markers, setMarkers } = useContext(CoordinateContext)
+  var { markers, setMarkers } = useContext(MarkersContext)
   var [ lng, setLng ] = useState(0);
   var [ lat, setLat ] = useState(0);
 

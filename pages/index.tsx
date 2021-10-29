@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import ListComponent from "../components/ListComponent";
 import MapComponent from "../components/MapComponent";
-import CoordinateContext, { Markers } from "../components/CoordinateContext";
+import MarkersContext, { Markers } from "../components/MarkersContext";
 
 import styles from "../styles/Home.module.css";
 
@@ -24,7 +24,6 @@ const Home: NextPage = () => {
         <meta name="description" content="React-Next Assignment alloted to Mukesh V" />
         <meta name="robots" content="index, follow"/>
         <meta name="keywords" content="Mukesh, UrbanMatrix, drone, startup, future" />
-        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
       </Head>
 
@@ -38,10 +37,10 @@ const Home: NextPage = () => {
         </p>
 
         <div className={styles.gridContainer}>
-          <CoordinateContext.Provider value={{ markers, setMarkers }}>
+          <MarkersContext.Provider value={{ markers, setMarkers }}>
             <MapComponent className={styles.item} />
             <ListComponent className={styles.item} />
-          </CoordinateContext.Provider>
+          </MarkersContext.Provider>
         </div>
       </main>
 

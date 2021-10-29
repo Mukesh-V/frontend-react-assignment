@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import ReactMapGL, { MapContext, MapEvent, ViewportProps, FlyToInterpolator } from "react-map-gl";
-import CoordinateContext, { Coordinate } from './CoordinateContext';
+import MarkersContext, { Coordinate } from './MarkersContext';
 
 import { Tooltip } from '@mui/material'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
@@ -20,7 +20,7 @@ const MAPBOX_TOKEN = process.env.MAPBOX_TOKEN || "";
 // Sample from react-map-gl documentation
 function CustomMarker(props: MarkerProps) {
   const context = useContext(MapContext);
-  const { markers } = useContext(CoordinateContext)
+  const { markers } = useContext(MarkersContext)
 
   var { point, index, selected } = props;
   const [x, y] = context.viewport? context.viewport.project([point.lng, point.lat]) : [];
@@ -81,7 +81,7 @@ const MapComponent = (props: MapComponentProps): JSX.Element => {
     zoom: 8,
   });
 
-  const {markers, setMarkers} = useContext(CoordinateContext)
+  const {markers, setMarkers} = useContext(MarkersContext)
 
   // Listen for changes in "selected" state and change viewport accordingly
   useEffect(()=>{

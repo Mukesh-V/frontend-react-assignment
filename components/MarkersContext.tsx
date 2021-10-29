@@ -11,9 +11,9 @@ export interface Markers {
   selected : number;
 }
 
-const CoordinateContext = createContext({
+const MarkersContext = createContext({
   markers : {} as Markers,
   setMarkers: (data:Markers) => {}
 });
 
-export default CoordinateContext;
+export default MarkersContext;
